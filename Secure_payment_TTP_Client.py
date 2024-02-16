@@ -2,7 +2,6 @@ from random import randint
 from netqasm.sdk import Qubit
 from netqasm.sdk.classical_communication.message import StructuredMessage
 import hmac
-import sqlite3
 import hashlib
 from squidasm.sim.stack.common import LogManager
 from squidasm.sim.stack.program import Program, ProgramContext, ProgramMeta

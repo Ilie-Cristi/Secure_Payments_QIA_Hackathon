@@ -1,9 +1,6 @@
 from Secure_payment_TTP_Client import MaliciousClientProgram, TTPProgram, ClientProgram, TTP, Merchant
-
-import numpy as np
 import logging
 from squidasm.run.stack.run import run
-from squidasm.sim.stack.common import LogManager
 from squidasm.run.stack.config import StackNetworkConfig
 
 
@@ -11,10 +8,10 @@ from squidasm.run.stack.config import StackNetworkConfig
 cfg = StackNetworkConfig.from_file("Secure_payment.yaml")
 
 # Define the number of qubits used for |P>
-num_qubits = 50 
+num_qubits = 200 
 
 # Create instances of programs to run
-Client_program = ClientProgram(num_qubits)
+Client_program = MaliciousClientProgram(num_qubits)
 TTP_program = TTPProgram(num_qubits)
 
 # toggle logging. Set to logging.INFO for logging of events.
