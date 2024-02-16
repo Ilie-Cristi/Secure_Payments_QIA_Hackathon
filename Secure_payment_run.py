@@ -1,4 +1,4 @@
-from Secure_payment_TTP_Client import TTPProgram, ClientProgram, TTP, Merchant
+from Secure_payment_TTP_Client import MaliciousClientProgram, TTPProgram, ClientProgram, TTP, Merchant
 
 import numpy as np
 import logging
@@ -11,7 +11,7 @@ from squidasm.run.stack.config import StackNetworkConfig
 cfg = StackNetworkConfig.from_file("Secure_payment.yaml")
 
 # Define the number of qubits used for |P>
-num_qubits = 10 
+num_qubits = 50 
 
 # Create instances of programs to run
 Client_program = ClientProgram(num_qubits)
@@ -47,9 +47,10 @@ k_r = Merchant1.return_to_bank()[0]
 M_r = Merchant1.return_to_bank()[1]
 CID_r = Merchant1.return_to_bank()[2]
 
-
 # Create a TTP instance named Bank and send the key, CID and merchant ID
 # The initial bitstream and the initial basis vector were kept in memory
 # to verify the validity of the transaction
+
 Bank = TTP(num_qubits, b, B, k_r, M_r, CID_r)
+
 print(Bank.verify_P())
