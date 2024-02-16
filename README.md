@@ -6,9 +6,11 @@ There are three par6es: a Client, a Merchant, and a Bank/Creditcard ins6tute (de
 Party, TTP). We do not assume any quantum or classical communica6on channel to be trusted, except
 an ini6al prior step between the TTP and Client for an account crea6on (in which the Client receives a
 secret token C from the TTP).
+#
+
 ![Screenshot from 2024-02-16 16-33-30](https://github.com/Ilie-Cristi/Secure_Payments_QIA_Hackathon/assets/61991016/c383ec69-7f90-457e-90dc-2670e6ba95dc)
 
-
+#
 
 The protocol:
 1. During a payment, the TTP generates a random bitstring b and a random conjugate basis-string B, both of length λ. The j-th bit of b is encoded onto a quantum state prepared in the j-th element of B. For example, assuming λ = 4 and Bj in {+/-;0/1}, choosing b = 0101 and B = 0011 would result in a 4-qubit quantum state |P⟩ = |+⟩|-⟩|0⟩|1⟩. Indeed, the first bit of B (i.e., 0) selects +/- and the first bit of b (i.e., 0) selects +. And so on. The TTP sends |P⟩ to the Client.
